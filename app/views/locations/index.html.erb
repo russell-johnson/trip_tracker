@@ -1,0 +1,12 @@
+  <h1>Locations for: <%= @trip.name %></h1>
+<hr />
+
+<% if  @locations.any? %>
+  <% @locations.each do |item| %>
+    <%= location.name %>
+  <% end %>
+<% else %>
+  <h3>No locations for this trip.</h3>
+<% end %>
+
+<%= link_to 'New Category', new_trip_location_path(@list) %>

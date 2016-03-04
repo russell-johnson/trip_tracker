@@ -1,0 +1,21 @@
+<h1>Your Trips</h1>
+<hr />
+<% @trips.each do |trip| %>
+ <div class='card center'>
+    <h3>
+      <%= link_to trip.name, trip_locations_path(trip) %>
+    </h3>
+    
+    <br />
+     <%= link_to 'Edit', edit_trip_path(trip) %>
+     <ur />
+    <%= link_to 'Delete', trip_path(trip), method: :delete, data: {confirm: 'Really delete?'} %>
+  </div>
+<% end %>
+<br />
+
+<%= link_to 'Create Trip', new_trip_path %>
+
+
+
+
